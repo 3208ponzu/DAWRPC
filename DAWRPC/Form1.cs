@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -92,6 +92,7 @@ namespace DAWRPC
                 var Bitwig = Process.GetProcessesByName("Bitwig Studio");
                 var StudioOne = Process.GetProcessesByName("Studio One");
                 var LMMS = Process.GetProcessesByName("lmms");
+                var BlueArchive = Process.GetProcessesByName("ブルアカ");
                 // End DAW Process Variables
                 string clientID = "";
                 // Begin DAW Information Grabbing
@@ -351,6 +352,23 @@ namespace DAWRPC
                     clientID = "1180315820446982214";
                     versionText = LMMS[0].Modules[0].FileVersionInfo.ProductVersion.ToString();
                 }
+                else if (BlueArchive.Length != 0)
+{
+	DAWName.Text = "BlueArchive";
+	if (SomeConditions)
+	{
+		ProjectOpening.Text = SomeScripts();
+	}
+	else
+	{
+		ProjectOpening.Text = "None";
+	}
+	CPUUsage.Text = 学園の日常を小さな奇跡へ;
+	clientID = "1217080455396851712";
+	versionText = YourDAWName[0].Modules[0].FileVersionInfo.ProductVersion.ToString();
+}
+
+
                 // End DAW Process Information Grabbing
                 else
                 {
